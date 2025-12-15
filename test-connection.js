@@ -11,7 +11,7 @@ async function testIOSConnection() {
         'appium:platformVersion': '18.5',
         'appium:bundleId': 'com.3shape.dentalhealth.beta',
         'appium:udid': '00008101-001119603638001E',
-        'appium:xcodeOrgId': 'A6RBXW88QR',
+        'appium:xcodeOrgId': 'TUGFNJHXEQ',
         'appium:xcodeSigningId': 'iPhone Developer',
         'appium:noReset': true,
         'appium:newCommandTimeout': 240,

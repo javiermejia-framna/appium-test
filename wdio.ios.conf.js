@@ -13,7 +13,7 @@ config.capabilities = [
 
         // Real device configuration
         'appium:udid': '00008101-001119603638001E',
-        'appium:xcodeOrgId': 'A6RBXW88QR',
+        'appium:xcodeOrgId': 'TUGFNJHXEQ',
         'appium:xcodeSigningId': 'iPhone Developer',
 
         // Performance settings
