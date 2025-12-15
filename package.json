@@ -2,6 +2,7 @@
   "name": "3shape-appium-test",
   "version": "1.0.0",
   "description": "Test Automation for the 3Shape project using Appium and WebDriverIO",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "wdio run ./wdio.conf.js",
@@ -20,6 +21,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@wdio/appium-service": "^8.27.0",
     "@wdio/cli": "^8.27.0",
     "@wdio/local-runner": "^8.27.0",
     "@wdio/mocha-framework": "^8.27.0",
@@ -28,6 +30,5 @@
     "appium-uiautomator2-driver": "^2.41.3",
     "appium-xcuitest-driver": "^5.12.2",
     "chai": "^4.3.10"
-  },
-  "dependencies": {}
+  }
 }
