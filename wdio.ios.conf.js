@@ -1,18 +1,20 @@
 const { config } = require('./wdio.conf.js');
 
-// iOS specific configuration
+// iOS specific configuration - Real Device Setup
 config.capabilities = [
     {
         platformName: 'iOS',
         'appium:automationName': 'XCUITest',
-        'appium:deviceName': 'iPhone 14', // Update to your target device
-        'appium:platformVersion': '16.0', // Update to your target version
+        'appium:deviceName': 'iPhone', // Real device
+        'appium:platformVersion': '18.5',
 
-        // Bundle ID - UPDATE THIS WITH YOUR 3SHAPE APP DETAILS
-        'appium:bundleId': 'com.threeshape.app', // Replace with actual bundle ID
+        // 3Shape Dental Health Beta App
+        'appium:bundleId': 'com.3shape.dentalhealth.beta',
 
-        // Optional: If you need to install the app
-        // 'appium:app': '/path/to/your/app.app',
+        // Real device configuration
+        'appium:udid': '00008101-001119603638001E',
+        'appium:xcodeOrgId': 'YOUR_TEAM_ID', // TODO: Update with your Apple Developer Team ID
+        'appium:xcodeSigningId': 'iPhone Developer',
 
         // Performance settings
         'appium:noReset': true, // Keep app state between tests
@@ -26,13 +28,12 @@ config.capabilities = [
         'appium:wdaLaunchTimeout': 120000,
         'appium:wdaConnectionTimeout': 120000,
 
-        // Simulator settings (remove if using real device)
-        'appium:isSimulator': true,
+        // WebDriverAgent settings for real device
+        'appium:updatedWDABundleId': 'com.facebook.WebDriverAgentRunner',
+        'appium:usePrebuiltWDA': false,
 
-        // Uncomment if using real device
-        // 'appium:udid': 'YOUR_DEVICE_UDID',
-        // 'appium:xcodeOrgId': 'YOUR_TEAM_ID',
-        // 'appium:xcodeSigningId': 'iPhone Developer'
+        // Set to false for real device
+        'appium:isSimulator': false
     }
 ];
 
