@@ -33,7 +33,10 @@ config.capabilities = [
         'appium:usePrebuiltWDA': false,
 
         // Set to false for real device
-        'appium:isSimulator': false
+        'appium:isSimulator': false,
+
+        // Enable detailed Xcode build logs for troubleshooting
+        'appium:showXcodeLog': true
     }
 ];
 
