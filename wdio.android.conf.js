@@ -1,48 +1,39 @@
 const { config } = require('./wdio.conf.js');
 
-// Android specific configuration
+// Android specific configuration - Real device with com.threeshape.beta
 config.capabilities = [
     {
         platformName: 'Android',
         'appium:automationName': 'UiAutomator2',
-        'appium:deviceName': 'Android Emulator',
-        'appium:platformVersion': '13.0', // Update to your target version
+        'appium:deviceName': 'Android Device',
 
-        // App package and activity - UPDATE THESE WITH YOUR 3SHAPE APP DETAILS
-        'appium:appPackage': 'com.threeshape.app', // Replace with actual package name
-        'appium:appActivity': '.MainActivity', // Replace with actual activity name
+        // 3Shape Beta app (already installed on device)
+        'appium:appPackage': 'com.threeshape.beta',
+        // Let Appium auto-detect the launcher activity
+        'appium:appWaitActivity': '*',
 
-        // Optional: If you need to install the app
-        // 'appium:app': '/path/to/your/app.apk',
-
-        // Performance settings
-        'appium:noReset': true, // Keep app state between tests
+        // App state settings
+        'appium:noReset': true,
         'appium:fullReset': false,
-        'appium:newCommandTimeout': 240,
+        'appium:newCommandTimeout': 300,
 
-        // Additional Android settings
+        // Android settings
         'appium:autoGrantPermissions': true,
         'appium:disableWindowAnimation': true,
 
         // Wait settings
         'appium:waitForIdleTimeout': 0,
-        'appium:androidInstallTimeout': 90000
+        'appium:androidInstallTimeout': 90000,
+        'appium:adbExecTimeout': 60000
     }
 ];
 
-// Appium service configuration
-config.services = [
-    ['appium', {
-        command: 'appium',
-        args: {
-            address: 'localhost',
-            port: 4723,
-            relaxedSecurity: true,
-            logLevel: 'info'
-        }
-    }]
-];
+// Connect to an already-running Appium server (e.g. started via MCP or externally)
+// Remove the appium service so we don't try to start one locally
+config.services = [];
 
+config.hostname = 'localhost';
 config.port = 4723;
+config.path = '/';
 
 exports.config = config;

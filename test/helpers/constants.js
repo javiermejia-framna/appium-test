@@ -7,11 +7,11 @@ module.exports = {
     // App Information
     APP: {
         PACKAGE_NAME: {
-            ANDROID: 'com.threeshape.app', // Update with actual package name
-            IOS: 'com.threeshape.app' // Update with actual bundle ID
+            ANDROID: 'com.threeshape.beta',
+            IOS: 'com.3shape.dentalhealth.beta'
         },
         ACTIVITY_NAME: {
-            ANDROID: '.MainActivity' // Update with actual activity name
+            ANDROID: '*' // Auto-detected by Appium
         }
     },
 
